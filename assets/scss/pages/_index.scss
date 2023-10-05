@@ -1,0 +1,11 @@
+.background{
+    height: 100vh;
+    // height: calc(100vh - 58px - 56px);
+    background-size: cover;
+    background-image: url('/assets/images/background2.jpg');
+}
+
+.black-mask{
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+}

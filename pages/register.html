@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attractions Collection</title>
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+    <div class="container" >
+        <div class="d-flex justify-content-center align-items-center" style="height: calc(100vh - 58px - 56px);">
+            <form>           
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-form-label">Email</label>
+                    <div class="col">
+                        <input type="email" class="form-control" id="inputEmail3">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputPassword3" class="col-form-label">Password</label>
+                    <div class="col">
+                        <input type="password" class="form-control" id="inputPassword3">
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <button type="submit" class="btn btn-secondary text-white">註冊</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    
+    
+    <%- include('./layout/footer'); -%>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
+

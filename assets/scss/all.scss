@@ -1,0 +1,13 @@
+// 載入字型
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Noto+Serif+TC:wght@700&family=Yeseva+One&display=swap");
+// 變數會用到的 functions 一定要載入
+@import "../../node_modules/bootstrap/scss/functions";
+// 載入自訂 BS 樣式
+@import './utils/variables';
+// 載入所有 BS 的 SCSS 
+@import "../../node_modules/bootstrap";
+//icon
+// @import "../scss/icofont/icofont.min.css";
+
+@import './pages/index.scss';
+@import './layout/header';
