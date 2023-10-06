@@ -8,8 +8,8 @@
 
 ### 開發流程：
 10/4 畫好基本線稿
-10/5 建立專案:
-        - 使用 Vite 及 Bootstrap 套版
+10/5 建立專案
+10/6 資料列表api串接、未登入畫面切版完成
 
 ### 請助教協助查看：
 - vite 的 devDependencies & dependencies 設定是否合適

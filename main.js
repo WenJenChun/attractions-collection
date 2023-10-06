@@ -1,25 +1,38 @@
 import './assets/scss/all.scss';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
+// import { getAttractionDetail } from './detail';
 
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const attraction = document.querySelector('#attraction');
+const _url="http://localhost:3000";
 
-setupCounter(document.querySelector('#counter'))
+//獲取 api 資料並顯示在網頁上
+function init(){
+  axios.get(_url+"/views")
+  .then(function(response){
+    console.log(response.data);
+    const apiDatas = response.data;
+    let str = "";
+    apiDatas.forEach(function(item){
+      str += `
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-center">${item.name}</h5>
+                <p class="card-text">${item.description.slice(0,45)}...</p>
+                <div class="text-center">
+                  <a href="./detail.html?id=${item.id}" class="btn btn-secondary text-white mt-2">看看</a>
+                  <a href="#" class="btn btn-secondary text-white mt-2">收藏</a>
+                </div>
+              </div>
+            </div>
+          </div>`;
+    });
+
+    attraction.innerHTML = str;
+  });
+};
+
+init();
+

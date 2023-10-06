@@ -12,14 +12,8 @@
       <div class="black-mask">
         <h2 class="text-white text-center pt-5 pb-3">立刻<a class="text-bold text-secondary" href="/pages/login.html">登入</a>收藏喜歡的景點!</h2>
         <div class="container pt-5">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title text-center">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <div class="text-center">
-                <a href="#" class="btn btn-secondary text-white ">Go somewhere</a>
-              </div>
-            </div>
+          <div class="row" id="attraction">
+
           </div>
         </div>
       </div>
@@ -27,6 +21,7 @@
     </div>
     
     <%- include('./layout/footer'); -%>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

@@ -10,11 +10,18 @@
 
     <!-- 景點詳細頁 -->
 
-    <div class="container">
-        <h3 class="text-center">景點名稱</h3>
+    <div class="container w-50" style="height: calc(100vh - 58px - 56px);">
+        <h3 id="placeName" class="text-center pt-5"></h3>
+        <p id="placeDetail"></p>
+        <div id="like"></div>
+        <div class="text-center pt-5">
+          <a href="./index.html">回首頁</a>
+        </div>
     </div>
     
     <%- include('./layout/footer'); -%>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/detail.js"></script>
   </body>
 </html>
