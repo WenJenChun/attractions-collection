@@ -1,0 +1,49 @@
+
+const userName = document.querySelector("#newName");
+const userEmail = document.querySelector("#newEmail");
+const userPassword = document.querySelector("#newPassword");
+const registerBtn = document.querySelector("#registerBtn");
+const _url = "http://localhost:3000";
+
+// admin
+// "email": "admin@mail.com",
+// "password": "1234",
+// "name": "June",
+// "role": "admin"
+
+// function register(){
+//     console.log("hi from register");
+//     axios.post(_url+"/register",{
+//         "name": "June",
+//         "email": "admin@mail.com",
+//         "password": "1234",
+//         "role": "admin"
+//     }).then(function(res){
+//         console.log(res.data);
+//     }).catch(function(error){
+//         console.log(error.response)
+//     });
+// };
+
+// register();
+
+console.log("hi from register");
+
+function register(){
+    axios.post(_url+"/register",{
+        "name": userName.value,
+        "email": userEmail.value,
+        "password": userEmail.value,
+        "role": "general"
+    }).then(function(res){
+        console.log(res.data);
+    }).catch(function(error){
+        console.log(error.response)
+    });
+};
+
+registerBtn.addEventListener("click", function(e){
+    register();
+    alert("註冊成功");
+    window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
+});

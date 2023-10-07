@@ -9,21 +9,27 @@
     <%- include('./layout/header'); -%>
     <div class="container" >
         <div class="d-flex justify-content-center align-items-center" style="height: calc(100vh - 58px - 56px);">
-            <form>           
+            <form>  
                 <div class="row mb-3">
-                    <label for="inputEmail3" class="col-form-label">Email</label>
+                    <label for="newName" class="col-form-label">名稱</label>
                     <div class="col">
-                        <input type="email" class="form-control" id="inputEmail3">
+                        <input type="text" class="form-control" id="newName">
+                    </div>
+                </div>         
+                <div class="row mb-3">
+                    <label for="newEmail" class="col-form-label">Email</label>
+                    <div class="col">
+                        <input type="email" class="form-control" id="newEmail">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="inputPassword3" class="col-form-label">Password</label>
+                    <label for="newPassword" class="col-form-label">密碼</label>
                     <div class="col">
-                        <input type="password" class="form-control" id="inputPassword3">
+                        <input type="password" class="form-control" id="newPassword">
                     </div>
                 </div>
                 <div class="text-center mt-5">
-                    <button type="submit" class="btn btn-secondary text-white">註冊</button>
+                    <button id="registerBtn" type="submit" class="btn btn-secondary text-white">註冊</button>
                 </div>
             </form>
         </div>
@@ -34,6 +40,7 @@
     <%- include('./layout/footer'); -%>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/register.js"></script>
   </body>
 </html>
 
