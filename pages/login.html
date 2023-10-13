@@ -8,6 +8,7 @@
   <body>
     <%- include('./layout/header'); -%>
     <div class="container" >
+        <p id="testArea"></p>
         <div class="d-flex justify-content-center align-items-center" style="height: calc(100vh - 58px - 56px);">
             <form>           
                 <div class="row mb-3">
@@ -23,7 +24,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-5">
-                    <button id="loginBtn" type="submit" class="btn btn-secondary text-white">登入</button>
+                    <input id="loginBtn" type="button" class="btn btn-secondary text-white " value="登入">
                 </div>
             </form>
         </div>
@@ -32,7 +33,10 @@
     
     
     <%- include('./layout/footer'); -%>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/login.js"></script>
+
   </body>
 </html>
 

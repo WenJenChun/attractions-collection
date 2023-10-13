@@ -4,31 +4,38 @@ const userEmail = document.querySelector("#userEmail");
 const userPassword = document.querySelector("#userPassword");
 const loginBtn = document.querySelector("#loginBtn");
 const _url = "http://localhost:3000";
+let token;
+
+const testArea = document.querySelector("#testArea");
 
 // admin
 // "email": "admin@mail.com",
 // "password": "1234",
-// "name": "June",
+// "name": "admin",
 // "role": "admin"
 
 console.log("hi from Log In");
 
 function logIn(){
-    axios.post(_url+"/register",{
-        "name": userName.value,
-        "email": userEmail.value,
-        "password": userEmail.value,
-        "role": "general"
+    axios.post(_url+"/login",{
+        // "email": userEmail.value,
+        // "password": userPassword.value,
+        "email": "admin@mail.com",
+        "password": "1234"
     }).then(function(res){
+        console.log("response 回傳");
         console.log(res.data);
+        token = res.data.accessToken;
+        localStorage.setItem("token", token);
     }).catch(function(error){
+        console.log("錯誤訊息");
         console.log(error.response)
     });
 };
 
-logIn();
-// registerBtn.addEventListener("click", function(e){
-//     logIn();
-//     alert("歡迎回來！");
-//     window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
-// });
+// logIn();
+loginBtn.addEventListener("click", function(e){
+    logIn();
+    alert("歡迎回來！");
+    window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
+});

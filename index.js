@@ -29,3 +29,10 @@ function init(){
 };
 
 init();
+// localStorage.removeItem("token");
+// console.log(localStorage.getItem("token"));
+if(localStorage.getItem("token")==null){
+  console.log('還沒登入');
+} else {
+  console.log('已登入');
+}
