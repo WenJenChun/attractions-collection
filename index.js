@@ -1,6 +1,6 @@
 const attraction = document.querySelector('#attraction');
 const _url="http://localhost:3000";
-
+const navBar = document.querySelector('#navBar');
 //獲取 api 資料並顯示在網頁上
 function init(){
   axios.get(_url+"/views")
@@ -35,4 +35,10 @@ if(localStorage.getItem("token")==null){
   console.log('還沒登入');
 } else {
   console.log('已登入');
+  navBar.innerHTML =
+  ` 
+  <a class="me-3" href="/pages/backboard.html">後台</a>
+  <a class="me-3" href="/pages/like.html">我的收藏</a>
+  <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
+  `;
 }

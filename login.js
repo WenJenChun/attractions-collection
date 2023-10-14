@@ -5,6 +5,7 @@ const userPassword = document.querySelector("#userPassword");
 const loginBtn = document.querySelector("#loginBtn");
 const _url = "http://localhost:3000";
 let token;
+let role;
 
 const testArea = document.querySelector("#testArea");
 
@@ -18,22 +19,24 @@ console.log("hi from Log In");
 
 function logIn(){
     axios.post(_url+"/login",{
-        // "email": userEmail.value,
-        // "password": userPassword.value,
-        "email": "admin@mail.com",
-        "password": "1234"
+        "email": userEmail.value,
+        "password": userPassword.value,
+        // "email": "admin@mail.com",
+        // "password": "1234"
     }).then(function(res){
         console.log("response 回傳");
         console.log(res.data);
         token = res.data.accessToken;
+        role = res.data.user.role;
         localStorage.setItem("token", token);
+        localStorage.setItem("role", token);
     }).catch(function(error){
         console.log("錯誤訊息");
         console.log(error.response)
     });
 };
 
-// logIn();
+
 loginBtn.addEventListener("click", function(e){
     logIn();
     alert("歡迎回來！");
