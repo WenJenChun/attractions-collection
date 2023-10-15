@@ -1,6 +1,8 @@
 const attraction = document.querySelector('#attraction');
 const _url="http://localhost:3000";
 const navBar = document.querySelector('#navBar');
+const greeting = document.querySelector('#greeting');
+
 //獲取 api 資料並顯示在網頁上
 function init(){
   axios.get(_url+"/views")
@@ -35,6 +37,7 @@ if(localStorage.getItem("token")==null){
   console.log('還沒登入');
 } else {
   console.log('已登入');
+  greeting.textContent = "把喜歡的景點都收藏起來！";
   if(localStorage.getItem("role")=="admin"){
     navBar.innerHTML =
     ` 
@@ -54,5 +57,6 @@ if(localStorage.getItem("token")==null){
     localStorage.removeItem("token");
     localStorage.removeItem("role");
     location.reload();
+    window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
   });
 }

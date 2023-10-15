@@ -1,57 +1,42 @@
-const attractionList = document.querySelector('#attractionList');
+const attraction = document.querySelector('#attraction');
 const _url="http://localhost:3000";
 const navBar = document.querySelector('#navBar');
 
 //獲取 api 資料並顯示在網頁上
 function init(){
-  axios.get(_url+"/views")
+  axios.get(_url+"/collects")
   .then(function(response){
     console.log(response.data);
     const apiDatas = response.data;
     let str = "";
     apiDatas.forEach(function(item){
-    str += `
-        <tr>
-            <th scope="row">${item.id}</th>
-            <td>${item.name}</td>
-            <td>${item.description}</td>
-            <td>
-              <a href="/pages/edit.html?id=${item.id}" class="btn btn-sm btn-secondary text-white">編輯</a>
-              <input data-attraction-id=${item.id} type="button" class="mt-1 deleteAttraction btn btn-sm btn-warning text-white" value="刪除">
-            </td>
-        </tr>`;
+      str += `
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-center">${item.name}</h5>
+                <p class="card-text">${item.description.slice(0,45)}...</p>
+                <div class="text-center">
+                  <a href="./detail.html?id=${item.id}" class="btn btn-secondary text-white mt-2">看看</a>
+                  <a href="#" class="btn btn-secondary text-white mt-2">收藏</a>
+                </div>
+              </div>
+            </div>
+          </div>`;
     });
-    attractionList.innerHTML = str;
 
-    const deleteAttractionBtns = document.querySelectorAll('.deleteAttraction');
-
-    deleteAttractionBtns.forEach(function(btn) {
-      btn.addEventListener("click", function () {
-        const attractionId = btn.getAttribute('data-attraction-id');
-        console.log("按"+attractionId);
-        axios.delete(`${_url}/views/${attractionId}`)
-          .then(function (res) {
-            alert("刪除成功！");
-            location.reload();
-          })
-          .catch(function (error) {
-            console.error("刪除失敗：" + error);
-          });
-      });
-    });
-    
-
+    attraction.innerHTML = str;
   });
 };
 
 init();
-
-
-
+// localStorage.removeItem("token");
+// console.log(localStorage.getItem("token"));
 if(localStorage.getItem("token")==null){
-    console.log('還沒登入');
+  console.log('還沒登入');
 } else {
   console.log('已登入');
+
   if(localStorage.getItem("role")=="admin"){
     navBar.innerHTML =
     ` 
@@ -72,6 +57,5 @@ if(localStorage.getItem("token")==null){
     localStorage.removeItem("role");
     location.reload();
     window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
-
   });
 }
