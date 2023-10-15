@@ -29,7 +29,7 @@ function logIn(){
         token = res.data.accessToken;
         role = res.data.user.role;
         localStorage.setItem("token", token);
-        localStorage.setItem("role", token);
+        localStorage.setItem("role", role);
     }).catch(function(error){
         console.log("錯誤訊息");
         console.log(error.response)
