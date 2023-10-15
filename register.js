@@ -31,14 +31,14 @@ console.log("hi from register");
 
 function register(){
     axios.post(_url+"/register",{
-        // "name": userName.value,
-        // "email": userEmail.value,
-        // "password": userEmail.value,
-        // "role": "general"
-        "name": "admin",
-        "email": "admin@mail.com",
-        "password": "1234",
-        "role": "admin"
+        "name": userName.value,
+        "email": userEmail.value,
+        "password": userPassword.value,
+        "role": "general"
+        // "name": "admin",
+        // "email": "admin@mail.com",
+        // "password": "1234",
+        // "role": "admin"
     }).then(function(res){
         console.log(res.data);
     }).catch(function(error){
@@ -48,6 +48,6 @@ function register(){
 // register();
 registerBtn.addEventListener("click", function(e){
     register();
-    // alert("註冊成功");
-    // window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
+    alert("註冊成功!");
+    window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
 });

@@ -49,7 +49,6 @@ if(localStorage.getItem("token")==null){
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   }
-
   const logoutBtn = document.querySelector('#logoutBtn');
   logoutBtn.addEventListener("click", function(){
     localStorage.removeItem("token");

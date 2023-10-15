@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attractions Collection</title>
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+
+    <!-- 景點詳細頁 -->
+
+    <div class="container w-75" >
+      <div class="" style="height: calc(100vh - 58px - 56px);">
+        <h3 class="text-center pt-5">編輯景點</h3>
+        <form>
+            <div class="mb-3">
+              <label for="placeName" class="form-label">名稱</label>
+              <input id="placeName" type="text" class="form-control" >
+            </div>
+            <div class="mb-3">
+              <label for="placeDetail" class="form-label">敘述</label>
+              <textarea class="form-control" id="placeDetail" rows="3"></textarea>
+            </div>
+            <div class="text-center pt-3">
+                <input id="saveChanges" type="button" class="btn btn-secondary text-white " value="儲存">
+                <input id="cancelEditing" type="button" class="btn btn-primary text-white " value="取消">
+            </div>
+        </form>
+      </div>
+    </div>
+    
+    <%- include('./layout/footer'); -%>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/edit.js"></script>
+  </body>
+</html>
+
