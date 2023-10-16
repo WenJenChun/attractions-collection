@@ -56,13 +56,13 @@ if(localStorage.getItem("token")==null){
     navBar.innerHTML =
     ` 
     <a class="me-3" href="/pages/backboard.html">後台</a>
-    <a class="me-3" href="/pages/like.html">我的收藏</a>
+    <a class="me-3" href="/pages/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   } else {
     navBar.innerHTML =
     ` 
-    <a class="me-3" href="/pages/like.html">我的收藏</a>
+    <a class="me-3" href="/pages/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   }
@@ -70,6 +70,8 @@ if(localStorage.getItem("token")==null){
   logoutBtn.addEventListener("click", function(){
     localStorage.removeItem("token");
     localStorage.removeItem("role");
+    localStorage.removeItem("userId");
+
     location.reload();
     window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
 

@@ -1,10 +1,11 @@
-const attraction = document.querySelector('#attraction');
+const collections = document.querySelector('#collections');
 const _url="http://localhost:3000";
 const navBar = document.querySelector('#navBar');
+let id = localStorage.getItem("userId");
 
 //獲取 api 資料並顯示在網頁上
 function init(){
-  axios.get(_url+"/collects")
+  axios.get(_url+"/collections?userId="+id+"&_expand=view")
   .then(function(response){
     console.log(response.data);
     const apiDatas = response.data;
@@ -14,24 +15,25 @@ function init(){
           <div class="col">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title text-center">${item.name}</h5>
-                <p class="card-text">${item.description.slice(0,45)}...</p>
+                <h5 class="card-title text-center">${item.view.name}</h5>
+                <p class="card-text">${item.view.description.slice(0,45)}...</p>
                 <div class="text-center">
-                  <a href="./detail.html?id=${item.id}" class="btn btn-secondary text-white mt-2">看看</a>
-                  <a href="#" class="btn btn-secondary text-white mt-2">收藏</a>
+                  <a href="./detail.html?id=${item.view.id}" class="btn btn-secondary text-white mt-2">看看</a>
+                  <a href="#" class="btn btn-secondary text-white mt-2">已收藏</a>
                 </div>
               </div>
             </div>
           </div>`;
     });
 
-    attraction.innerHTML = str;
+    collections.innerHTML = str;
   });
 };
 
 init();
 // localStorage.removeItem("token");
 // console.log(localStorage.getItem("token"));
+
 if(localStorage.getItem("token")==null){
   console.log('還沒登入');
 } else {
@@ -41,13 +43,13 @@ if(localStorage.getItem("token")==null){
     navBar.innerHTML =
     ` 
     <a class="me-3" href="/pages/backboard.html">後台</a>
-    <a class="me-3" href="/pages/like.html">我的收藏</a>
+    <a class="me-3" href="/pages/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   } else {
     navBar.innerHTML =
     ` 
-    <a class="me-3" href="/pages/like.html">我的收藏</a>
+    <a class="me-3" href="/pages/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   }
@@ -55,6 +57,8 @@ if(localStorage.getItem("token")==null){
   logoutBtn.addEventListener("click", function(){
     localStorage.removeItem("token");
     localStorage.removeItem("role");
+    localStorage.removeItem("userId");
+
     location.reload();
     window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
   });

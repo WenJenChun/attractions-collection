@@ -6,6 +6,7 @@ const loginBtn = document.querySelector("#loginBtn");
 const _url = "http://localhost:3000";
 let token;
 let role;
+let userId;
 
 const testArea = document.querySelector("#testArea");
 
@@ -28,8 +29,10 @@ function logIn(){
         console.log(res.data);
         token = res.data.accessToken;
         role = res.data.user.role;
+        userId = res.data.user.id;
         localStorage.setItem("token", token);
         localStorage.setItem("role", role);
+        localStorage.setItem("userId", userId);
     }).catch(function(error){
         console.log("錯誤訊息");
         console.log(error.response)
