@@ -3,7 +3,13 @@ const _url="http://localhost:3000";
 const navBar = document.querySelector('#navBar');
 const greeting = document.querySelector('#greeting');
 let id;
+let collectBtns;
 
+
+
+//是否登入
+//否 - 顯示所有資料，button 皆顯示 收藏
+//是 - 顯示所有資料，已收藏的 button 顯示「已收藏」，否則顯示「收藏」
 
 //獲取 api 資料並顯示在網頁上
 function init(){
@@ -21,7 +27,6 @@ function init(){
                 <p class="card-text">${item.description.slice(0,45)}...</p>
                 <div class="text-center">
                   <a href="./detail.html?id=${item.id}" class="btn btn-secondary text-white mt-2">看看</a>
-                  <a href="#" id="collect" data-attraction-id=${item.id} class="btn btn-secondary text-white mt-2">收藏</a>
                 </div>
               </div>
             </div>
@@ -29,14 +34,18 @@ function init(){
     });
 
     attraction.innerHTML = str;
+    
     collectAttractions();
     
   });
 };
 
-function collectAttractions(){
-  const collectBtns = document.querySelectorAll('#collect');
+// <a href="#" id="collect" data-attraction-id=${item.id} class="btn btn-secondary text-white mt-2">收藏</a>
 
+//判斷是否登入
+
+function collectAttractions(){
+  collectBtns = document.querySelectorAll('#collect');
   collectBtns.forEach(function(btn){
     btn.addEventListener("click", function(){
       const attractionId = btn.getAttribute('data-attraction-id');
@@ -45,37 +54,12 @@ function collectAttractions(){
         alert("請先登入");
         window.location.href = "http://localhost:5173/attractions-collection/pages/login.html";
       } else {
+      //這邊要比對 user 本身的收藏景點和既有的景點
+        console.log(btn);
 
-        if(btn){}
-
-
-
-        if(btn.textContent == "收藏"){
-          btn.textContent = "已收藏!"
-          axios.post(_url+"/collections",{
-            "viewId": attractionId,
-            "userId": localStorage.getItem("userId"),
-        }).then(function(res){
-            console.log("response 回傳");
-            console.log(res.data);
-        }).catch(function(error){
-            console.log("錯誤訊息");
-            console.log(error.response)
-        });
-  
-        } else {
-          btn.textContent = "收藏";
-
-        }
       }
-      
-      
-
-      
     });
   });
-
-
 };
 
 function getUserCollects(){

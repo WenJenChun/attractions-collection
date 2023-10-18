@@ -3,6 +3,7 @@ const _url="http://localhost:3000";
 const navBar = document.querySelector('#navBar');
 let id = localStorage.getItem("userId");
 
+
 //獲取 api 資料並顯示在網頁上
 function init(){
   axios.get(_url+"/collections?userId="+id+"&_expand=view")
@@ -19,7 +20,6 @@ function init(){
                 <p class="card-text">${item.view.description.slice(0,45)}...</p>
                 <div class="text-center">
                   <a href="./detail.html?id=${item.view.id}" class="btn btn-secondary text-white mt-2">看看</a>
-                  <a href="#" class="btn btn-secondary text-white mt-2">已收藏</a>
                 </div>
               </div>
             </div>
@@ -31,8 +31,6 @@ function init(){
 };
 
 init();
-// localStorage.removeItem("token");
-// console.log(localStorage.getItem("token"));
 
 if(localStorage.getItem("token")==null){
   console.log('還沒登入');
