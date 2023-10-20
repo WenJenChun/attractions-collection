@@ -1,4 +1,4 @@
-import"./main-e5116f8e.js";const c=document.querySelector("#collections"),n="http://localhost:3000",l=document.querySelector("#navBar");let s=localStorage.getItem("userId");function i(){axios.get(n+"/collections?userId="+s+"&_expand=view").then(function(t){console.log(t.data);const a=t.data;let o="";a.forEach(function(e){o+=`
+import"./main-64d97dbb.js";const n=document.querySelector("#collections"),c="https://attractions-api-jhwt.onrender.com",l=document.querySelector("#navBar");let s=localStorage.getItem("userId");function i(){axios.get(c+"/collections?userId="+s+"&_expand=view").then(function(t){console.log(t.data);const a=t.data;let o="";a.forEach(function(e){o+=`
           <div class="col">
             <div class="card">
               <div class="card-body">
@@ -9,7 +9,7 @@ import"./main-e5116f8e.js";const c=document.querySelector("#collections"),n="htt
                 </div>
               </div>
             </div>
-          </div>`}),c.innerHTML=o})}i();localStorage.getItem("token")==null?console.log("還沒登入"):(console.log("已登入"),localStorage.getItem("role")=="admin"?l.innerHTML=` 
+          </div>`}),n.innerHTML=o})}i();localStorage.getItem("token")==null?console.log("還沒登入"):(console.log("已登入"),localStorage.getItem("role")=="admin"?l.innerHTML=` 
     <a class="me-3" href="/pages/backboard.html">後台</a>
     <a class="me-3" href="/pages/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
