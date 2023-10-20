@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attractions Collection</title>
+    <script type="module" crossorigin src="/attractions-collection/assets/backboard-f09923fe.js"></script>
+    <link rel="modulepreload" crossorigin href="/attractions-collection/assets/main-e5116f8e.js">
+    <link rel="stylesheet" href="/attractions-collection/assets/main-68ca4291.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/pages/index.html">
+        <img class="logo" src="/attractions-collection/assets/logo-9f1838c2.png" alt="" >
+      </a>
+      <div id="navBar" class="ms-auto">
+          <a class="me-3" href="/pages/login.html">登入</a>
+          <a class="me-3" href="/pages/register.html">註冊</a>
+      </div>
+    </div>
+</nav>
+
+    <!-- 後台畫面 -->
+
+    <div class="container pt-5">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col text-center">
+        <h3>景點列表</h3>
+      </div>
+      <div class="col text-end">
+        <a href="./new.html" class="text-secondary">新增景點</a>
+      </div>
+      
+     
+    </div>
+        
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">名稱</th>
+              <th scope="col">敘述</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="attractionList">
+            
+          </tbody>
+        </table>
+    </div>
+
+  
+    
+    <footer class="mt-auto bg-primary text-center py-3 text-white">
+2023 HexSchool Project by JUNEW
+</footer>    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    
+    
+  </body>
+</html>
