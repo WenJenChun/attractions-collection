@@ -4,6 +4,7 @@ const viewId = location.href.split("=")[1];
 const collectBtn = document.querySelector('#collectBtn');
 const userId = localStorage.getItem("userId");
 let userCollects;
+let collectId;
 
 
 const _url="http://localhost:3000";
@@ -23,6 +24,7 @@ async function getAttractionDetail() {
   await getUserCollection();
   console.log(userCollects);
 
+
   axios.get(_url+"/views/"+viewId)
   .then(function(response){
     const apiData = response.data;
@@ -35,9 +37,14 @@ async function getAttractionDetail() {
     //   return obj.viewId === viewId;
     // });
 
+    
+
+    
     if(isCollected){
+      //取該景點在 userCollects 的 id 
+      collectId=isCollected.id;
       collectBtn.textContent = "已收藏";
-      console.log('已收');
+      console.log('已收藏，id='+collectId);
     } else {
       collectBtn.textContent = "尚未收藏";
       console.log('還沒收');
@@ -69,12 +76,7 @@ collectBtn.addEventListener("click", function(){
   } else {
     //這邊是已經收藏要改為「尚未收藏」
     collectBtn.textContent = "尚未收藏";
-
-    //要取得該收藏在 collect 的 id
-    //要怎麼得到此 id?
-    let collectionId;
-    const isCollected = userCollects.find(obj => obj.viewId === viewId); 
-    axios.delete(`${_url}/collections?userId=${userId}&viewId=${viewId}`)
+    axios.delete(`${_url}/collections/${collectId}`)
     .then(function(res){
       console.log("response 回傳");
       console.log(res.data);
@@ -82,21 +84,6 @@ collectBtn.addEventListener("click", function(){
       console.log("錯誤訊息");
       console.log(error.response)
   });
-    // axios.delete(_url+"/collections", {
-    //   headers: {
-    //     authorization: `Bearer ${localStorage.getItem("token")}` ,
-    //   },
-    //   data: {
-    //     "viewId": viewId,
-    //     "userId": localStorage.getItem("userId"),
-    //   }
-    // }).then(function(res){
-    //     console.log("response 回傳");
-    //     console.log(res.data);
-    // }).catch(function(error){
-    //     console.log("錯誤訊息");
-    //     console.log(error.response)
-    // });
 
   }
 });
