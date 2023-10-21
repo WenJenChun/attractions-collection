@@ -59,7 +59,7 @@ getAttractionDetail();
 collectBtn.addEventListener("click", function(){
   if(localStorage.getItem("token")==null){
     alert("請先登入!");
-    window.location.href = "/login.html";
+    window.location.href = "https://wenjenchun.github.io/attractions-collection/login.html";
   }
 
   if(collectBtn.textContent =="尚未收藏"){
@@ -114,6 +114,6 @@ if(localStorage.getItem("token")==null){
     localStorage.removeItem("role");
     localStorage.removeItem("userId");
     location.reload();
-    window.location.href = "/index.html";
+    window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
   });
 }

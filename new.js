@@ -10,7 +10,7 @@ const _url="https://attractions-api-jhwt.onrender.com";
 const token = localStorage.getItem("token");
 
 cancelEditingBtn.addEventListener("click", function(){
-  window.location.href = "/backboard.html";
+  window.location.href = "https://wenjenchun.github.io/attractions-collection/backboard.html";
 });
 
 function addAttraction(){
@@ -30,5 +30,5 @@ function addAttraction(){
 
 saveChangeBtn.addEventListener("click", function(){
   addAttraction();
-  window.location.href = "/backboard.html";
+  window.location.href = "https://wenjenchun.github.io/attractions-collection/backboard.html";
 });

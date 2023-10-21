@@ -50,5 +50,5 @@ function register(){
 registerBtn.addEventListener("click", function(e){
     register();
     alert("註冊成功!");
-    window.location.href = "/index.html";
+    window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
 });

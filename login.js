@@ -44,5 +44,5 @@ function logIn(){
 loginBtn.addEventListener("click", function(e){
     logIn();
     alert("歡迎回來！");
-    window.location.href = "/index.html";
+    window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
 });

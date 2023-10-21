@@ -74,7 +74,7 @@ if(localStorage.getItem("token")==null){
     localStorage.removeItem("userId");
 
     location.reload();
-    window.location.href = "/index.html";
+    window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
 
   });
 }

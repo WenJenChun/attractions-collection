@@ -23,7 +23,7 @@ function getAttractionDetail() {
 getAttractionDetail()
 
 cancelEditingBtn.addEventListener("click", function(){
-  window.location.href = "/backboard.html";
+  window.location.href = "https://wenjenchun.github.io/attractions-collection/backboard.html";
 });
 
 function saveChanges(){
@@ -43,6 +43,6 @@ function saveChanges(){
 
 saveChangeBtn.addEventListener("click", function(){
   saveChanges();
-  window.location.href = "/backboard.html";
+  window.location.href = "https://wenjenchun.github.io/attractions-collection/backboard.html";
 
 });
