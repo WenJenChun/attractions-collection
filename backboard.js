@@ -17,7 +17,7 @@ function init(){
             <td>${item.name}</td>
             <td>${item.description}</td>
             <td>
-              <a href="/edit.html?id=${item.id}" class="btn btn-sm btn-secondary text-white">編輯</a>
+              <a href="/attractions-collection/edit.html?id=${item.id}" class="btn btn-sm btn-secondary text-white">編輯</a>
               <input data-attraction-id=${item.id} type="button" class="mt-1 deleteAttraction btn btn-sm btn-warning text-white" value="刪除">
             </td>
         </tr>`;
