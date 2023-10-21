@@ -23,7 +23,7 @@ function getAttractionDetail() {
 getAttractionDetail()
 
 cancelEditingBtn.addEventListener("click", function(){
-  window.location.href = "http://localhost:5173/attractions-collection/pages/backboard.html";
+  window.location.href = "http://localhost:5173/attractions-collection/backboard.html";
 });
 
 function saveChanges(){
@@ -43,6 +43,6 @@ function saveChanges(){
 
 saveChangeBtn.addEventListener("click", function(){
   saveChanges();
-  window.location.href = "http://localhost:5173/attractions-collection/pages/backboard.html";
+  window.location.href = "http://localhost:5173/attractions-collection/backboard.html";
 
 });

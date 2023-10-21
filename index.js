@@ -54,7 +54,7 @@ function collectAttractions(){
 
       if(localStorage.getItem("token")== null){
         alert("請先登入");
-        window.location.href = "http://localhost:5173/attractions-collection/pages/login.html";
+        window.location.href = "http://localhost:5173/attractions-collection/login.html";
       } else {
       //這邊要比對 user 本身的收藏景點和既有的景點
         console.log(btn);
@@ -105,14 +105,14 @@ if(localStorage.getItem("token")==null){
   if(localStorage.getItem("role")=="admin"){
     navBar.innerHTML =
     ` 
-    <a class="me-3" href="/pages/backboard.html">後台</a>
-    <a class="me-3" href="/pages/collections.html">我的收藏</a>
+    <a class="me-3" href="/backboard.html">後台</a>
+    <a class="me-3" href="/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   } else {
     navBar.innerHTML =
     ` 
-    <a class="me-3" href="/pages/collections.html">我的收藏</a>
+    <a class="me-3" href="/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   }
@@ -122,6 +122,6 @@ if(localStorage.getItem("token")==null){
     localStorage.removeItem("role");
     localStorage.removeItem("userId");
     location.reload();
-    window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
+    window.location.href = "http://localhost:5173/attractions-collection/index.html";
   });
 }
