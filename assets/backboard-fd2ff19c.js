@@ -4,7 +4,7 @@ import"./main-be82571a.js";const r=document.querySelector("#attractionList"),c="
             <td>${t.name}</td>
             <td>${t.description}</td>
             <td>
-              <a href="/edit.html?id=${t.id}" class="btn btn-sm btn-secondary text-white">編輯</a>
+              <a href="/attractions-collection/edit.html?id=${t.id}" class="btn btn-sm btn-secondary text-white">編輯</a>
               <input data-attraction-id=${t.id} type="button" class="mt-1 deleteAttraction btn btn-sm btn-warning text-white" value="刪除">
             </td>
         </tr>`}),r.innerHTML=o,document.querySelectorAll(".deleteAttraction").forEach(function(t){t.addEventListener("click",function(){const n=t.getAttribute("data-attraction-id");console.log("按"+n),axios.delete(`${c}/views/${n}`).then(function(a){alert("刪除成功！"),location.reload()}).catch(function(a){console.error("刪除失敗："+a)})})})})}s();localStorage.getItem("token")==null?console.log("還沒登入"):(console.log("已登入"),localStorage.getItem("role")=="admin"?l.innerHTML=` 
