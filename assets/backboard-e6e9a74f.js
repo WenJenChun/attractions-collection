@@ -1,4 +1,4 @@
-import"./main-ee23273a.js";const i=document.querySelector("#attractionList"),c="https://attractions-api-jhwt.onrender.com",l=document.querySelector("#navBar");function s(){axios.get(c+"/views").then(function(e){console.log(e.data);const r=e.data;let o="";r.forEach(function(t){o+=`
+import"./main-5aeeef5c.js";const i=document.querySelector("#attractionList"),c="https://attractions-api-jhwt.onrender.com",l=document.querySelector("#navBar");function s(){axios.get(c+"/views").then(function(e){console.log(e.data);const r=e.data;let o="";r.forEach(function(t){o+=`
         <tr>
             <th scope="row">${t.id}</th>
             <td>${t.name}</td>
@@ -14,4 +14,4 @@ import"./main-ee23273a.js";const i=document.querySelector("#attractionList"),c="
     `:l.innerHTML=` 
     <a class="me-3" href="/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
-    `,document.querySelector("#logoutBtn").addEventListener("click",function(){localStorage.removeItem("token"),localStorage.removeItem("role"),localStorage.removeItem("userId"),location.reload(),window.location.href="http://localhost:5173/attractions-collection/index.html"}));
+    `,document.querySelector("#logoutBtn").addEventListener("click",function(){localStorage.removeItem("token"),localStorage.removeItem("role"),localStorage.removeItem("userId"),location.reload(),window.location.href="/index.html"}));
