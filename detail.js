@@ -7,7 +7,8 @@ let userCollects;
 let collectId;
 
 
-const _url="http://localhost:3000";
+// const _url="http://localhost:3000";
+const _url="https://attractions-api-jhwt.onrender.com";
 
 
 //獲取用戶收藏資訊

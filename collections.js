@@ -1,5 +1,6 @@
 const collections = document.querySelector('#collections');
-const _url="http://localhost:3000";
+// const _url="http://localhost:3000";
+const _url="https://attractions-api-jhwt.onrender.com";
 const navBar = document.querySelector('#navBar');
 let id = localStorage.getItem("userId");
 

@@ -1,5 +1,6 @@
 const attractionList = document.querySelector('#attractionList');
-const _url="http://localhost:3000";
+// const _url="http://localhost:3000";
+const _url="https://attractions-api-jhwt.onrender.com";
 const navBar = document.querySelector('#navBar');
 
 //獲取 api 資料並顯示在網頁上
