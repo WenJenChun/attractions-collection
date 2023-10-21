@@ -50,5 +50,5 @@ function register(){
 registerBtn.addEventListener("click", function(e){
     register();
     alert("註冊成功!");
-    window.location.href = "http://localhost:5173/attractions-collection/index.html";
+    window.location.href = "/index.html";
 });

@@ -74,7 +74,7 @@ if(localStorage.getItem("token")==null){
     localStorage.removeItem("userId");
 
     location.reload();
-    window.location.href = "http://localhost:5173/attractions-collection/index.html";
+    window.location.href = "/index.html";
 
   });
 }

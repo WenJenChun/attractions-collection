@@ -54,7 +54,7 @@ function collectAttractions(){
 
       if(localStorage.getItem("token")== null){
         alert("請先登入");
-        window.location.href = "http://localhost:5173/attractions-collection/login.html";
+        window.location.href = "/login.html";
       } else {
       //這邊要比對 user 本身的收藏景點和既有的景點
         console.log(btn);
@@ -122,6 +122,6 @@ if(localStorage.getItem("token")==null){
     localStorage.removeItem("role");
     localStorage.removeItem("userId");
     location.reload();
-    window.location.href = "http://localhost:5173/attractions-collection/index.html";
+    window.location.href = "/index.html";
   });
 }

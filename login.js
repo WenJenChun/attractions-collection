@@ -44,5 +44,5 @@ function logIn(){
 loginBtn.addEventListener("click", function(e){
     logIn();
     alert("歡迎回來！");
-    window.location.href = "http://localhost:5173/attractions-collection/index.html";
+    window.location.href = "/index.html";
 });
