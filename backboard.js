@@ -17,7 +17,7 @@ function init(){
             <td>${item.name}</td>
             <td>${item.description}</td>
             <td>
-              <a href="/pages/edit.html?id=${item.id}" class="btn btn-sm btn-secondary text-white">編輯</a>
+              <a href="/edit.html?id=${item.id}" class="btn btn-sm btn-secondary text-white">編輯</a>
               <input data-attraction-id=${item.id} type="button" class="mt-1 deleteAttraction btn btn-sm btn-warning text-white" value="刪除">
             </td>
         </tr>`;
@@ -56,14 +56,14 @@ if(localStorage.getItem("token")==null){
   if(localStorage.getItem("role")=="admin"){
     navBar.innerHTML =
     ` 
-    <a class="me-3" href="/pages/backboard.html">後台</a>
-    <a class="me-3" href="/pages/collections.html">我的收藏</a>
+    <a class="me-3" href="/backboard.html">後台</a>
+    <a class="me-3" href="/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   } else {
     navBar.innerHTML =
     ` 
-    <a class="me-3" href="/pages/collections.html">我的收藏</a>
+    <a class="me-3" href="/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   }
@@ -74,7 +74,7 @@ if(localStorage.getItem("token")==null){
     localStorage.removeItem("userId");
 
     location.reload();
-    window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
+    window.location.href = "http://localhost:5173/attractions-collection/index.html";
 
   });
 }
