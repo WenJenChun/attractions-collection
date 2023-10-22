@@ -1,4 +1,4 @@
-import"./main-be82571a.js";const a=document.querySelector("#collections"),c="https://attractions-api-jhwt.onrender.com",l=document.querySelector("#navBar");let i=localStorage.getItem("userId");function s(){axios.get(c+"/collections?userId="+i+"&_expand=view").then(function(t){console.log(t.data);const n=t.data;let o="";n.forEach(function(e){o+=`
+import"./main-4e50fb73.js";const a=document.querySelector("#collections"),c="https://attractions-api-jhwt.onrender.com",l=document.querySelector("#navBar");let i=localStorage.getItem("userId");function s(){axios.get(c+"/collections?userId="+i+"&_expand=view").then(function(t){console.log(t.data);const n=t.data;let o="";n.forEach(function(e){o+=`
           <div class="col">
             <div class="card">
               <div class="card-body">

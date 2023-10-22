@@ -1,4 +1,4 @@
-import"./main-be82571a.js";const r=document.querySelector("#attractionList"),c="https://attractions-api-jhwt.onrender.com",l=document.querySelector("#navBar");function s(){axios.get(c+"/views").then(function(e){console.log(e.data);const i=e.data;let o="";i.forEach(function(t){o+=`
+import"./main-4e50fb73.js";const r=document.querySelector("#attractionList"),c="https://attractions-api-jhwt.onrender.com",l=document.querySelector("#navBar");function s(){axios.get(c+"/views").then(function(e){console.log(e.data);const i=e.data;let o="";i.forEach(function(t){o+=`
         <tr>
             <th scope="row">${t.id}</th>
             <td>${t.name}</td>
