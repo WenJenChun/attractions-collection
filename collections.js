@@ -33,26 +33,38 @@ function init(){
 
 init();
 
-if(localStorage.getItem("token")==null){
-  console.log('還沒登入');
-} else {
-  console.log('已登入');
+// if(localStorage.getItem("token")==null){
+//   console.log('還沒登入');
+// } else {
+//   console.log('已登入');
 
-  if(localStorage.getItem("role")=="admin"){
-    navBar.innerHTML =
-    ` 
-    <a class="me-3" href="/pages/backboard.html">後台</a>
-    <a class="me-3" href="/pages/collections.html">我的收藏</a>
-    <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
-    `;
-  } else {
-    navBar.innerHTML =
-    ` 
-    <a class="me-3" href="/pages/collections.html">我的收藏</a>
-    <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
-    `;
-  }
-  const logoutBtn = document.querySelector('#logoutBtn');
+//   if(localStorage.getItem("role")=="admin"){
+//     navBar.innerHTML =
+//     ` 
+//     <a class="me-3" href="/pages/backboard.html">後台</a>
+//     <a class="me-3" href="/pages/collections.html">我的收藏</a>
+//     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
+//     `;
+//   } else {
+//     navBar.innerHTML =
+//     ` 
+//     <a class="me-3" href="/pages/collections.html">我的收藏</a>
+//     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
+//     `;
+//   }
+
+//   const logoutBtn = document.querySelector('#logoutBtn');
+//   logoutBtn.addEventListener("click", function(){
+//     localStorage.removeItem("token");
+//     localStorage.removeItem("role");
+//     localStorage.removeItem("userId");
+
+//     location.reload();
+//     window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
+//   });
+// }
+
+const logoutBtn = document.querySelector('#logoutBtn');
   logoutBtn.addEventListener("click", function(){
     localStorage.removeItem("token");
     localStorage.removeItem("role");
@@ -61,4 +73,3 @@ if(localStorage.getItem("token")==null){
     location.reload();
     window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
   });
-}

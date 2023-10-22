@@ -6,7 +6,9 @@
     <title>Attractions Collection</title>
   </head>
   <body>
-    <%- include('./layout/header'); -%>
+    <!-- <%- include('./layout/header'); -%> -->
+    <%- include('./layout/header', { isLogIn: (localStorage.getItem("token") !== null),isAdmin: (localStorage.getItem("role") == "admin")}); -%>
+
 
     <div class="background">
       <div class="black-mask">
