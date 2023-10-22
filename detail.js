@@ -38,9 +38,6 @@ async function getAttractionDetail() {
     //   return obj.viewId === viewId;
     // });
 
-    
-
-    
     if(isCollected){
       //取該景點在 userCollects 的 id 
       collectId=isCollected.id;

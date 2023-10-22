@@ -105,14 +105,14 @@ if(localStorage.getItem("token")==null){
   if(localStorage.getItem("role")=="admin"){
     navBar.innerHTML =
     ` 
-    <a class="me-3" href="/backboard.html">後台</a>
-    <a class="me-3" href="/collections.html">我的收藏</a>
+    <a class="me-3" href="/attractions-collection/backboard.html">後台</a>
+    <a class="me-3" href="/attractions-collection/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   } else {
     navBar.innerHTML =
     ` 
-    <a class="me-3" href="/collections.html">我的收藏</a>
+    <a class="me-3" href="/attractions-collection/collections.html">我的收藏</a>
     <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
     `;
   }
