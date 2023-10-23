@@ -1,16 +1,16 @@
 const navBar = document.querySelector('#navBar');
-navBar.innerHTML =
-` 
-<a class="me-3" href="/attractions-collection/login.html">登入</a>
-<a class="me-3" href="/attractions-collection/register.html">註冊</a>
-`;
+// navBar.innerHTML =
+// ` 
+// <a class="me-3" href="/attractions-collection/login.html">登入</a>
+// <a class="me-3" href="/attractions-collection/register.html">註冊</a>
+// `;
 
 const userEmail = document.querySelector("#userEmail");
 const userPassword = document.querySelector("#userPassword");
 const loginBtn = document.querySelector("#loginBtn");
 
-// const _url = "http://localhost:3000";
-const _url="https://attractions-api-jhwt.onrender.com";
+const _url = "http://localhost:3000";
+// const _url="https://attractions-api-jhwt.onrender.com";
 let token;
 let role;
 let userId;
@@ -48,8 +48,44 @@ function logIn(){
 loginBtn.addEventListener("click", function(e){
     logIn();
     alert("歡迎回來！");
-    window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
+    // window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
+    window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
+
 });
 
 
-
+function checkLogIn(){
+    if(!isLogIn){
+      navBar.innerHTML =
+        ` 
+        <a class="me-3" href="/attractions-collection/login.html">登入</a>
+        <a class="me-3" href="/attractions-collection/register.html">註冊</a>
+        `;
+    } else {
+      if(isAdmin){
+        navBar.innerHTML =
+        ` 
+        <a class="me-3" href="/attractions-collection/backboard.html">後台</a>
+        <a class="me-3" href="/attractions-collection/collections.html">我的收藏</a>
+        <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
+        `;
+      } else {
+        navBar.innerHTML =
+        ` 
+        <a class="me-3" href="/attractions-collection/collections.html">我的收藏</a>
+        <input id="logoutBtn" type="button" class="btn btn-secondary text-white " value="登出">
+        `;
+      }
+    //   const logoutBtn = document.querySelector('#logoutBtn');
+  
+    //   logoutBtn.addEventListener("click", function(){
+    //     localStorage.removeItem("token");
+    //     localStorage.removeItem("role");
+    //     localStorage.removeItem("userId");
+    //     location.reload();
+    //     window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
+    //   });
+    }
+  }
+  
+  checkLogIn();

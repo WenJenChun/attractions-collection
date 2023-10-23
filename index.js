@@ -6,8 +6,8 @@ const navBar = document.querySelector('#navBar');
 const greeting = document.querySelector('#greeting');
 const attraction = document.querySelector('#attraction');
 
-// const _url="http://localhost:3000";
-const _url="https://attractions-api-jhwt.onrender.com";
+const _url="http://localhost:3000";
+// const _url="https://attractions-api-jhwt.onrender.com";
 
 let collectBtns;
 
@@ -96,7 +96,7 @@ init();
 
 function checkLogIn(){
   if(!isLogIn){
-    console.log('還沒登入7');
+    console.log('還沒登入');
     navBar.innerHTML =
       ` 
       <a class="me-3" href="/attractions-collection/login.html">登入</a>

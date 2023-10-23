@@ -11,8 +11,8 @@ const id = location.href.split("=")[1];
 const saveChangeBtn = document.querySelector('#saveChanges');
 const cancelEditingBtn = document.querySelector('#cancelEditing');
 
-// const _url="http://localhost:3000";
-const _url="https://attractions-api-jhwt.onrender.com";
+const _url="http://localhost:3000";
+// const _url="https://attractions-api-jhwt.onrender.com";
 const token = localStorage.getItem("token");
 
 cancelEditingBtn.addEventListener("click", function(){
@@ -41,16 +41,12 @@ saveChangeBtn.addEventListener("click", function(){
 
 function checkLogIn(){
   if(!isLogIn){
-    console.log('還沒登入5');
     navBar.innerHTML =
       ` 
       <a class="me-3" href="/attractions-collection/login.html">登入</a>
       <a class="me-3" href="/attractions-collection/register.html">註冊</a>
       `;
   } else {
-    console.log('已登入');
-    
-    greeting.textContent = "把喜歡的景點都收藏起來！";
     if(isAdmin){
       navBar.innerHTML =
       ` 

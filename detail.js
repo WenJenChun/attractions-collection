@@ -13,8 +13,8 @@ let userCollects;
 let collectId;
 
 
-// const _url="http://localhost:3000";
-const _url="https://attractions-api-jhwt.onrender.com";
+const _url="http://localhost:3000";
+// const _url="https://attractions-api-jhwt.onrender.com";
 
 
 //1. 獲取景點資訊
@@ -29,6 +29,9 @@ function getViewInfo(){
     placeName.textContent = apiData.name;
     placeDetail.textContent = apiData.description;
     viewInfo = apiData;
+    console.log("======");
+    console.log(viewInfo);
+    console.log("======");
   });
 }
 

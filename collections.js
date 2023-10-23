@@ -5,8 +5,8 @@ const userId = localStorage.getItem("userId");
 const navBar = document.querySelector('#navBar');
 
 const collections = document.querySelector('#collections');
-// const _url="http://localhost:3000";
-const _url="https://attractions-api-jhwt.onrender.com";
+const _url="http://localhost:3000";
+// const _url="https://attractions-api-jhwt.onrender.com";
 
 
 //獲取 api 資料並顯示在網頁上
@@ -80,16 +80,13 @@ init();
 
 function checkLogIn(){
   if(!isLogIn){
-    console.log('還沒登入');
+    
     navBar.innerHTML =
       ` 
       <a class="me-3" href="/attractions-collection/login.html">登入</a>
       <a class="me-3" href="/attractions-collection/register.html">註冊</a>
       `;
   } else {
-    console.log('已登入');
-    
-    greeting.textContent = "把喜歡的景點都收藏起來！";
     if(isAdmin){
       navBar.innerHTML =
       ` 

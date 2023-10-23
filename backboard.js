@@ -62,9 +62,6 @@ function checkLogIn(){
       <a class="me-3" href="/attractions-collection/register.html">註冊</a>
       `;
   } else {
-    console.log('已登入');
-    
-    greeting.textContent = "把喜歡的景點都收藏起來！";
     if(isAdmin){
       navBar.innerHTML =
       ` 
