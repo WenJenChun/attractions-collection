@@ -1,21 +1,19 @@
-const isLogIn = localStorage.getItem("token") !== null;
-const isAdmin = localStorage.getItem("role") === "admin";
-const headerContent = document.getElementById('header-content');
-
-headerContent.innerHTML = `
-<%- include('./layout/header.ejs', { isLogIn: ${isLogIn}, isAdmin: ${isAdmin} }); -%>
+const navBar = document.querySelector('#navBar');
+navBar.innerHTML =
+` 
+<a class="me-3" href="/attractions-collection/login.html">登入</a>
+<a class="me-3" href="/attractions-collection/register.html">註冊</a>
 `;
 
 const userEmail = document.querySelector("#userEmail");
 const userPassword = document.querySelector("#userPassword");
 const loginBtn = document.querySelector("#loginBtn");
+
 // const _url = "http://localhost:3000";
 const _url="https://attractions-api-jhwt.onrender.com";
 let token;
 let role;
 let userId;
-
-const testArea = document.querySelector("#testArea");
 
 // admin
 // "email": "admin@mail.com",
@@ -23,7 +21,7 @@ const testArea = document.querySelector("#testArea");
 // "name": "admin",
 // "role": "admin"
 
-console.log("hi from Log In");
+
 
 function logIn(){
     axios.post(_url+"/login",{
@@ -52,3 +50,6 @@ loginBtn.addEventListener("click", function(e){
     alert("歡迎回來！");
     window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
 });
+
+
+
