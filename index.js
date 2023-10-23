@@ -96,7 +96,12 @@ init();
 
 function checkLogIn(){
   if(!isLogIn){
-    console.log('還沒登入1');
+    console.log('還沒登入2');
+    navBar.innerHTML =
+      ` 
+      <a class="me-3" href="/attractions-collection/login.html">登入</a>
+      <a class="me-3" href="/attractions-collection/register.html">註冊</a>
+      `;
   } else {
     console.log('已登入');
     
