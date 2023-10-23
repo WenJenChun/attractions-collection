@@ -10,8 +10,8 @@ const userEmail = document.querySelector("#newEmail");
 const userPassword = document.querySelector("#newPassword");
 const registerBtn = document.querySelector("#registerBtn");
 
-const _url = "http://localhost:3000";
-// const _url="https://attractions-api-jhwt.onrender.com";
+// const _url = "http://localhost:3000";
+const _url="https://attractions-api-jhwt.onrender.com";
 
 // admin
 // "email": "admin@mail.com",

@@ -11,8 +11,8 @@ const id = location.href.split("=")[1];
 const saveChangeBtn = document.querySelector('#saveChanges');
 const cancelEditingBtn = document.querySelector('#cancelEditing');
 
-const _url="http://localhost:3000";
-// const _url="https://attractions-api-jhwt.onrender.com";
+// const _url="http://localhost:3000";
+const _url="https://attractions-api-jhwt.onrender.com";
 
 function getAttractionDetail() {
   axios.get(_url+"/views/"+id)

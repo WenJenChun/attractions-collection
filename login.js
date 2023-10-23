@@ -9,8 +9,8 @@ const userEmail = document.querySelector("#userEmail");
 const userPassword = document.querySelector("#userPassword");
 const loginBtn = document.querySelector("#loginBtn");
 
-const _url = "http://localhost:3000";
-// const _url="https://attractions-api-jhwt.onrender.com";
+// const _url = "http://localhost:3000";
+const _url="https://attractions-api-jhwt.onrender.com";
 let token;
 let role;
 let userId;
@@ -48,8 +48,8 @@ function logIn(){
 loginBtn.addEventListener("click", function(e){
     logIn();
     alert("歡迎回來！");
-    // window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
-    window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
+    window.location.href = "https://wenjenchun.github.io/attractions-collection/index.html";
+    // window.location.href = "http://localhost:5173/attractions-collection/pages/index.html";
 
 });
 

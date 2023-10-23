@@ -5,8 +5,8 @@ const userId = localStorage.getItem("userId");
 const navBar = document.querySelector('#navBar');
 
 const collections = document.querySelector('#collections');
-const _url="http://localhost:3000";
-// const _url="https://attractions-api-jhwt.onrender.com";
+// const _url="http://localhost:3000";
+const _url="https://attractions-api-jhwt.onrender.com";
 
 
 //獲取 api 資料並顯示在網頁上
