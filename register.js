@@ -1,10 +1,10 @@
-const isLogIn = localStorage.getItem("token") !== null;
-const isAdmin = localStorage.getItem("role") === "admin";
-const headerContent = document.getElementById('header-content');
-
-headerContent.innerHTML = `
-<%- include('./layout/header.ejs', { isLogIn: ${isLogIn}, isAdmin: ${isAdmin} }); -%>
+const navBar = document.querySelector('#navBar');
+navBar.innerHTML =
+` 
+<a class="me-3" href="/attractions-collection/login.html">登入</a>
+<a class="me-3" href="/attractions-collection/register.html">註冊</a>
 `;
+
 const userName = document.querySelector("#newName");
 const userEmail = document.querySelector("#newEmail");
 const userPassword = document.querySelector("#newPassword");

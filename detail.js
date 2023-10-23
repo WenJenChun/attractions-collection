@@ -1,15 +1,14 @@
 const isLogIn = localStorage.getItem("token") !== null;
 const isAdmin = localStorage.getItem("role") === "admin";
-const headerContent = document.getElementById('header-content');
+const userId = localStorage.getItem("userId");
 
-headerContent.innerHTML = `
-<%- include('./layout/header.ejs', { isLogIn: ${isLogIn}, isAdmin: ${isAdmin} }); -%>
-`;
+const navBar = document.querySelector('#navBar');
+
 const placeName = document.querySelector('#placeName');
 const placeDetail = document.querySelector('#placeDetail');
 const viewId = location.href.split("=")[1];
 const collectBtn = document.querySelector('#collectBtn');
-const userId = localStorage.getItem("userId");
+
 let userCollects;
 let collectId;
 

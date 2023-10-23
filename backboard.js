@@ -56,7 +56,6 @@ init();
 
 function checkLogIn(){
   if(!isLogIn){
-    console.log('還沒登入');
     navBar.innerHTML =
       ` 
       <a class="me-3" href="/attractions-collection/login.html">登入</a>
