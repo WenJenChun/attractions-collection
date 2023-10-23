@@ -1,3 +1,11 @@
+const isLogIn = localStorage.getItem("token") !== null;
+const isAdmin = localStorage.getItem("role") === "admin";
+const headerContent = document.getElementById('header-content');
+
+headerContent.innerHTML = `
+<%- include('./layout/header.ejs', { isLogIn: ${isLogIn}, isAdmin: ${isAdmin} }); -%>
+`;
+
 const collections = document.querySelector('#collections');
 // const _url="http://localhost:3000";
 const _url="https://attractions-api-jhwt.onrender.com";

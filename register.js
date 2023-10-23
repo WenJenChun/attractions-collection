@@ -1,4 +1,10 @@
+const isLogIn = localStorage.getItem("token") !== null;
+const isAdmin = localStorage.getItem("role") === "admin";
+const headerContent = document.getElementById('header-content');
 
+headerContent.innerHTML = `
+<%- include('./layout/header.ejs', { isLogIn: ${isLogIn}, isAdmin: ${isAdmin} }); -%>
+`;
 const userName = document.querySelector("#newName");
 const userEmail = document.querySelector("#newEmail");
 const userPassword = document.querySelector("#newPassword");

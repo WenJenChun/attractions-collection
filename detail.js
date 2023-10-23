@@ -1,3 +1,10 @@
+const isLogIn = localStorage.getItem("token") !== null;
+const isAdmin = localStorage.getItem("role") === "admin";
+const headerContent = document.getElementById('header-content');
+
+headerContent.innerHTML = `
+<%- include('./layout/header.ejs', { isLogIn: ${isLogIn}, isAdmin: ${isAdmin} }); -%>
+`;
 const placeName = document.querySelector('#placeName');
 const placeDetail = document.querySelector('#placeDetail');
 const viewId = location.href.split("=")[1];
